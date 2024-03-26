@@ -277,37 +277,107 @@ a {
   line-height: 28px;
 }
 
-@media screen and (max-width: 1150px) {
-  .name {
-    color: #fff;
-    font-family: "Raleway";
-    font-size: 38px;
-    letter-spacing: 6px;
-    font-weight: 100;
-    line-height: 48px;
-  }
+/* General styles for all screen sizes */
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: 0.35s ease;
+  -o-transition: 0.35s ease;
+  transition: 0.35s ease;
 }
 
-@media screen and (max-width: 468px) {
-  .page.top-bar.abs-center {
+.rela-block,
+.rela-inline,
+.floated,
+.abs-center,
+.name,
+.side-bar,
+.mugshot,
+.logo,
+.logo .logo-text,
+.social:before,
+.side-header,
+.list-thing,
+.content-container,
+.content-container > *,
+.content-container > h3,
+.content-container > p.long-margin,
+.title,
+.separator,
+.greyed {
+  /* Define styles applicable for all screen sizes */
+}
+
+body {
+  font-family: "Open Sans";
+  font-size: 18px;
+  letter-spacing: 0px;
+  font-weight: 400;
+  line-height: 28px;
+  background: url("http://kingofwallpapers.com/leaves/leaves-016.jpg") right no-repeat;
+  background-size: cover;
+}
+
+/* Styles for mobile devices */
+@media only screen and (max-width: 767px) {
+  /* Define styles specific to mobile devices */
+  .name {
+    left: 5%;
+    right: 5%;
+    top: 20px;
+    height: auto;
+    font-size: 24px;
+    letter-spacing: 2px;
+    line-height: 30px;
     text-align: center;
   }
+
+  .mugshot {
+    top: 20px;
+    left: calc(50% - 105px);
+    width: 210px;
+    height: 210px;
+  }
+
   .side-bar {
     display: none;
   }
 
   .content-container {
-    width: 100%;
+    width: 90%;
+    padding: 25px 5% 50px;
   }
 
-  .name {
+  .logo .logo-text {
+    top: 10%;
+    left: 10%;
+    right: 10%;
     font-size: 28px;
-    line-height: 38px;
-    position: absolute;
-    left: 2px;
+    letter-spacing: 1px;
+    line-height: 35px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .side-bar {
+    display: block; /* Ensure the sidebar is always visible on smaller screens */
+    position: static; /* Change position to static to make it flow in the document */
+    width: 100%; /* Adjust width to fit the screen */
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+  .mugshot,
+  .logo {
+    display:inline-block;
+    margin-top: 40px;
+    /* Hide mugshot and logo on smaller screens if necessary */
+  }
+  .content-container {
+    width: 100%; /* Take full width on smaller screens */
   }
 
   .top-bar {
-    height: 180px;
+    height: 300px;
+    background-color: #848484;
+    color: #fff;
   }
 }
